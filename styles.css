@@ -1,0 +1,310 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    -webkit-transition: .2s linear;
+    font-family: 'Nunito', sans-serif;
+    transition: .2s linear;
+}
+:root {
+    --bg: #10221b;
+    --gr: #219150;
+    --pl: #aaa;
+    --box: 4rem 4rem 0 rgba(0, 0, 0, 0.1);
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+}
+html::-webkit-scrollbar {
+    width: 1rem;
+}
+html::-webkit-scrollbar-track {
+    background: #fff;
+}
+html::-webkit-scrollbar-thumb {
+    background: #10221b;
+}
+body {
+    width: auto;
+    background-color: #fff;
+    overflow: hidden;
+}
+#nav-close, #menu-btn {
+    display: block;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    /* padding: 1rem; */
+}
+header .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: transparent;
+    font-size: 2.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    /* background-color: #fff;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1); */
+}
+header .nav a {
+    color: #000;
+    cursor: pointer;
+}
+header .nav .logo{
+    font-size: 3rem;
+    font-weight: 700;
+}
+header .nav .logo:hover{
+    color: #000;
+}
+header .nav a:hover, #search-btn:hover {
+    color: var(--gr);
+}
+header .nav a i{
+    color: var(--gr);
+}
+header .nav .n {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .nav .n div.bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+header .nav .n div.bg.active {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+header .nav .n .navbar {
+    padding: 200px 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    color: #000;
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+header .nav .n .navbar.active {
+    clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+header .nav .n .navbar #nav-close{
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-size: 5rem;
+    font-weight: 700;
+}
+header .nav .n .navbar #nav-close:hover {
+    color: var(--gr);
+}
+header .nav .n .navbar a {
+    font-size: 3.5rem;
+    margin: 0 .7rem;
+}
+header .nav .n .icons{
+    margin-left: 3rem;
+    padding: 1rem;
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+header .invicible {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+header .invicible section.search{
+    width: 100vw;
+    height: 0vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0%, 100% 0, 0 0);
+}
+header .invicible section.search .green:hover {
+    color: var(--gr);
+}
+header .invicible section.search.active {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+}
+header .invicible section.search div{
+    color: #fff;
+    font-size: 5rem;
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    cursor: pointer;
+}
+header .invicible section.search input{
+    width: 40%;
+    height: 0px;
+    background-color: transparent;
+    border-bottom: 4px solid #fff;
+    position: relative;
+    font-size: 2rem;
+    color: #fff;
+    border-radius: 5px;
+}
+header .invicible section.search input .b.active{
+    height: 40px;
+}
+header .invicible section.search label{
+    color: #fff;
+    font-size: 2rem;
+}
+header .fa-angle-left, 
+header .fa-angle-right{
+    position: absolute;
+    top: 50%;
+    font-size: 5rem;
+    cursor: pointer;
+}
+header .fa-angle-left {
+    left: 15px;
+}
+header .fa-angle-right {
+    right: 15px;
+}
+header section.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* nice */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+}
+header section.home div.box {
+    min-width: 100%;
+    min-height: 100%;
+    scroll-snap-align: center;
+    padding: 200px;
+}
+header section.home div.one,
+header section.home div.two,
+header section.home div.three{
+    background-image: url(./images/home-bg-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+header section.home div.two{
+    background-image: url(./images/home-bg-2.jpg);
+    justify-content: flex-start;
+}
+header section.home div.three{
+    background-image: url(./images/home-bg-3.jpg);
+}
+header section.home div.box .inner{
+    width: 450px;
+    height: 300px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+header section.home div.box .inner h3 {
+    font-size: 4.5rem;
+}
+header section.home div.box .inner h1 {
+    font-size: 6.5rem;
+    text-transform: uppercase;
+    color: var(--gr);
+}
+header section.home div.box .inner p {
+    line-height: 2.5rem;
+}
+header section.home div.box .inner button{
+    padding: 1.3rem 4rem;
+    background-color: transparent;
+    border: 2px solid #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+header section.home div.box .inner button:hover {
+    background-color: var(--bg);
+    color: #fff;
+}
+@media screen and (min-width: 520px) {
+    header .nav .n .navbar {
+        width: 70vw;
+    }
+}
+
+@media screen and (min-width: 620px) {
+    header .nav {
+        padding: 0 100px;
+    }
+    header .nav .n .navbar {
+        width: 50vw;
+    }
+}
+@media screen and (min-width: 900px) {
+    #nav-close, #menu-btn {
+        display: none;
+    }
+    header .nav .n .navbar {
+        display: block;
+    }
+    header .nav .n div.bg{
+        position: relative;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    header .nav .n .navbar {
+        padding: 0;
+        position: relative;
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        display: block;
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+    header .nav .n .navbar a {
+        font-size: 1.8rem;
+    }
+    header .nav .n .icons{
+        width: 100px;
+    }
+}
