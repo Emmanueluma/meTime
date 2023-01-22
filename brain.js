@@ -11,7 +11,7 @@ searchBtn.addEventListener('click', e => {
     if(searchInput.style.height !== '0px') {
         searchInput.style.height = '40px'
     }else{
-        searchInput.style.height = '0px'
+        searchInput.style.height = '0px';
     }
 });
 innerClose.addEventListener('click', e =>{
@@ -28,3 +28,41 @@ function made(main) {
 }
 made(menuBtn);
 made(navClose);
+
+const home = document.getElementById('home')
+const fa = document.querySelectorAll('.fa-sharp');
+let box = document.querySelectorAll('.box');
+let firstBg = document.getElementById('firstBg');
+let mainHeight, maxi;
+maxi = home.scrollWidth - home.clientWidth;
+/* const showIcons = () => {
+    fa[0].style.display = home.scrollLeft == 0 ? 'none' : 'block';
+    fa[1].style.display = home.scrollLeft == maxi ? 'none' : 'block';
+} */
+mainHeight = firstBg.clientWidth;
+fa.forEach(icons => {
+    icons.addEventListener('click', e => {
+        if(icons.id == 'next') {
+            home.scrollLeft += mainHeight;
+        }else{
+            home.scrollLeft -= mainHeight;
+        }
+        /* showIcons(); */
+    });
+});
+
+
+
+
+/* let c = [];
+
+box.forEach( e => {
+    c.push(e)
+})
+console.log(c[0].classList.contains('active001'))
+home.addEventListener('click', e => {
+        console.log(e)
+}) */
+
+
+
