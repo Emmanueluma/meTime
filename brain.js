@@ -30,15 +30,9 @@ made(menuBtn);
 made(navClose);
 
 const home = document.getElementById('home')
-const fa = document.querySelectorAll('.fa-sharp');
-let box = document.querySelectorAll('.box');
+const fa = document.querySelectorAll('.side0');
 let firstBg = document.getElementById('firstBg');
-let mainHeight, maxi;
-maxi = home.scrollWidth - home.clientWidth;
-/* const showIcons = () => {
-    fa[0].style.display = home.scrollLeft == 0 ? 'none' : 'block';
-    fa[1].style.display = home.scrollLeft == maxi ? 'none' : 'block';
-} */
+let mainHeight;
 mainHeight = firstBg.clientWidth;
 fa.forEach(icons => {
     icons.addEventListener('click', e => {
@@ -47,13 +41,31 @@ fa.forEach(icons => {
         }else{
             home.scrollLeft -= mainHeight;
         }
-        /* showIcons(); */
     });
 });
 
+const overFlow = document.getElementById('overFlow')
+const side = document.querySelectorAll('.side');
+let boxItemOne = document.getElementById('boxItemOne');
+let mainHeight1;
+mainHeight1 = boxItemOne.clientWidth + 10;
+side.forEach(icons => {
+    icons.addEventListener('click', e => {
+        if(icons.id == 'next1') {
+            overFlow.scrollLeft += mainHeight1;
+        }else{
+            overFlow.scrollLeft -= mainHeight1;
+        }
+    });
+});
 
-
-
+const skip = () => {
+    setTimeout(() => {
+        /* mainHeight = mainHeight + mainHeight; */
+        home.scrollLeft += mainHeight;
+        skip();
+    }, 1000);
+}
 /* let c = [];
 
 box.forEach( e => {
