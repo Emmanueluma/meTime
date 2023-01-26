@@ -5,6 +5,18 @@ const searchInput = document.getElementById('searchInput');
 const bgX = document.querySelectorAll('.bgX');
 const menuBtn = document.getElementById('menu-btn');
 const navClose = document.getElementById('nav-close');
+const nav = document.getElementById('nav');
+
+window.onscroll = function(){
+    if(window.pageYOffset > 100){
+        nav.style.background = '#fff';
+        nav.style.boxShadow = '0 4px 5px rgba(0, 0, 0, 0.1)';
+
+    }else {
+        nav.style.background = 'transparent';
+        nav.style.boxShadow = ' none';
+    }
+}
 
 searchBtn.addEventListener('click', e => {
     searchBody.classList.toggle('active');
@@ -29,6 +41,17 @@ function made(main) {
 made(menuBtn);
 made(navClose);
 
+const link = document.querySelectorAll('.link');
+link.forEach(icon => {
+    console.log(icon)
+    icon.addEventListener('click', e => {
+        bgX.forEach(ele => {
+            ele.classList.toggle('active');
+        })
+        console.log(1)
+    });
+}) 
+
 const home = document.getElementById('home')
 const fa = document.querySelectorAll('.side0');
 let firstBg = document.getElementById('firstBg');
@@ -43,6 +66,24 @@ fa.forEach(icons => {
         }
     });
 });
+const skip = async() => {
+    setTimeout(() => {
+        let num1;
+        num1 = home.offsetWidth + mainHeight;
+        if (home.scrollLeft == num1){
+            home.scrollLeft = 0;
+            
+        }
+        else{
+            home.scrollLeft += mainHeight;
+        }
+        skip();
+    }, 9000);
+}
+const body = document.getElementById('body')
+window.addEventListener('load', e => {
+    skip();
+})
 
 const overFlow = document.getElementById('overFlow')
 const side = document.querySelectorAll('.side');
@@ -58,23 +99,6 @@ side.forEach(icons => {
         }
     });
 });
-
-const skip = () => {
-    setTimeout(() => {
-        /* mainHeight = mainHeight + mainHeight; */
-        home.scrollLeft += mainHeight;
-        skip();
-    }, 1000);
-}
-/* let c = [];
-
-box.forEach( e => {
-    c.push(e)
-})
-console.log(c[0].classList.contains('active001'))
-home.addEventListener('click', e => {
-        console.log(e)
-}) */
 
 
 
