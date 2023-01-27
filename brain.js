@@ -78,7 +78,7 @@ const skip = async() => {
             home.scrollLeft += mainHeight;
         }
         skip();
-    }, 9000);
+    }, 7000);
 }
 const body = document.getElementById('body')
 window.addEventListener('load', e => {

@@ -694,7 +694,7 @@ main section.post .grid-container .grid-items .text h3 {
 main section.sub{
     text-align: center;
     background-color: #ddd;
-    padding: 30px 0;
+    padding: 30px 10px;
     font-size: 1.5rem;
 }
 main section.sub h3 {
@@ -837,7 +837,7 @@ footer .grid-container .item .inner .contact{
 }
 footer p.create {
     color: #fff;
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -845,6 +845,10 @@ footer p.create {
 }
 footer p.create span{
     color: var(--gr);
+}
+footer p.create span.a{
+    color: #fff;
+    display: none;
 }
 
 
@@ -870,6 +874,13 @@ footer p.create span{
     main section.sub .bg button{
         padding: 1.5rem 5rem;
     }
+    footer p.create {
+        font-size: 2.2rem;
+    }
+    footer p.create span.a{
+        display: block;
+    }
+    
 }
 
 @media screen and (min-width: 620px) {
