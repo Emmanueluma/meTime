@@ -67,7 +67,7 @@ header .nav a {
     cursor: pointer;
 }
 header .nav .logo{
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: 700;
     padding: .5rem;
     border: 2px solid transparent;
@@ -856,6 +856,9 @@ footer p.create span.a{
 
 
 @media screen and (min-width: 520px) {
+    header .nav .logo{
+        font-size: 3rem;
+    }
     header .nav .n .navbar {
         width: 70vw;
     }
